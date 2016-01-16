@@ -2,12 +2,10 @@
 #include <stdio.h>
 #include "TPosition.h"
 
-TPosition creerPosition(int p,int q)
+TPosition creerPosition()
 {
 
-	Position* pos = malloc(2*sizeof(Position));
-	pos->x =p;
-	pos->y =q;
+	Position* pos=NULL;
 
 	return pos;
 }
