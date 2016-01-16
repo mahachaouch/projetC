@@ -2,14 +2,10 @@
 #include <stdio.h>
 #include "TBateau.h"
 
-TBateau creerBateau(int t,TPosition posStart,TPosition posFin,int numJ)
+TBateau creerBateau()
 {
 
-	Bateau* bat=malloc(sizeof(Bateau));
-	bat->taille =t ;
-	bat->positionStart =posStart;
-	bat->positionFin =posFin;
-	bat->numJoueur =numJ;
+	Bateau* bat=NULL
 
 	return bat;
 }
