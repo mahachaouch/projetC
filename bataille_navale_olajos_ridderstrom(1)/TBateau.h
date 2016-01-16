@@ -23,7 +23,7 @@ struct Bateau {
 
 typedef Bateau* TBateau;
 
-TBateau creer_bateau(int t,TPosition posStart,TPosition posFin,int numJoueur);
+TBateau creer_bateau();
 int get_taille(TBateau bat);    /*renvoie taille de bateau*/
 TBateau change_taille(TBateau bat); /*diminue taille si bateau est touché*/
  
