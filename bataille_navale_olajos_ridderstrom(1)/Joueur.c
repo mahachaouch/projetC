@@ -3,12 +3,10 @@
 #include "TJoueur.h"
 
 
-TJoueur Creer_joueur(int n,int e)
+TJoueur Creer_joueur()
 {
 
-	Joueur* j = malloc(2*sizeof(Joueur));
-	j->num=n;
-	j->actif=e;
+	Joueur* j = NULL;
 	return j;
 };
 
