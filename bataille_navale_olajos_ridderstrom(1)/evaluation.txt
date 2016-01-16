@@ -1,0 +1,64 @@
+
+
+
+
+
+faute commune a tous les fichiers: 
+-definition de type abstrait par typedef innécessaire car les modules .h sont inclus
+- mauvaise définition du type 
+-spécification de fonction concernant un type dans le mauvais fichier (expl
+ajouterPosition dans le fichier Joueur alors que c est suppose être dans le fichier Position)
+
+-Les fonctions telque décrites en spécification ,prennent trop d argument et réalisent plusieurs taches et donc renvoient plusieurs résultat: le mieux serait de décomposer cette fonction en plusieurs fonctions et chacune s occupe de réaliser une tache et renvoie un seul résultat 
+
+
+-redondance de position: le joueur a une liste de positions occupée par tous ses bateaux , la grille mémorise tous les ensemble des positions occupées, la liste « places » comporte les positions des bateaux placés , idem pour la liste « touche » qui contient les bateaux qui ont été touché au moins une fois
+
+-liste de bateau touchés est inutile, ils l’ont utilisé pour fixer la condition d arrêt de la partie:
+initialement liste touche est vide , a chaque fois qu’un bateau est touché on le copie et on l inséré dans la liste des bateaux touché
+Problème d efficacité: pour contrôler un tir Cad voir son resultat il faut parcourir les deux listes : touche et places + vérification supplémentaire pour les bateaux dans la liste touche pour savoir si on les coule ou pas
+
+Solution: gérer les bateaux dans une seule liste ou seulement a partir de la grille vu qu on a une fonction qui permet de savoir a quel bateau appartient un e position donnée sur la grille
+
+Dans le fichier TListebateau.h : absence de spécification
+
+comme y a pas moyen d identifier le joueur a partir d un bateau et pas moyen d identifier un bateau a partir d un joueur,on a choisit la structure liste associative qui permet de stocker des couples(joueur,bateau) dans la liste des bateaux ou bien plus simplement on ajoute un entier dans bateau qui référence au joueur auquel il appartient (on a adopté la 2eme solution)
+
+
+-Aucune spécification pour créer les bateaux , seule information : un bateau a une taille
+
+
+
+
+
+
+
+
+
+Bataille.c
+compilation: 20 errors and 3 warnings (un main qui marche pas )
+
+TGrille:
+Compilation: 5 errors and 5 warnings
+
+TPartie:
+3 warnings
+
+
+TJoueur:
+3 warnings and 4 errors generated
+
+
+TLIstBateau:
+2 warnings and 20 errors generated.
+
+
+
+TPosition:
+3 warnings and 9 errors generated.
+
+TResultat:
+3 warnings and 10 errors generated.
+
+
+
